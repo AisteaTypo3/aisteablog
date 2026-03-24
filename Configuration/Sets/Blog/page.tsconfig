@@ -1,0 +1,18 @@
+# Blog-Datensätze im Backend-Wizard gruppieren
+TCEFORM.tt_content.CType.removeItems =
+
+# Neues Inhaltelement-Gruppe "Blog" im Wizard anzeigen
+mod.wizards.newContentElement.wizardItems.blog {
+    header = Blog
+    elements {
+        aisteablog_blog {
+            iconIdentifier = content-plugin
+            title = Aistea Blog
+            description = Zeigt Blog-Beiträge an (Liste, Detail, Kategorie)
+            tt_content_defValues {
+                CType = aisteablog_blog
+            }
+        }
+    }
+    show = aisteablog_blog
+}

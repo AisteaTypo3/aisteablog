@@ -1,0 +1,48 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<article class="blog-card">
+
+    <f:if condition="{post.firstCoverImage}">
+        <div class="blog-card__image">
+            <f:link.action action="show" arguments="{post: post}" tabindex="-1" aria-hidden="true">
+                <f:image image="{post.firstCoverImage}" width="640c" height="360c" class="blog-card__img" alt="{post.title}" />
+            </f:link.action>
+        </div>
+    </f:if>
+
+    <div class="blog-card__body">
+
+        <f:if condition="{post.categories}">
+            <div class="blog-card__categories">
+                <f:for each="{post.categories}" as="category">
+                    <f:link.action action="category" arguments="{category: category}" class="blog-card__category">
+                        {category.title}
+                    </f:link.action>
+                </f:for>
+            </div>
+        </f:if>
+
+        <h2 class="blog-card__title">
+            <f:link.action action="show" arguments="{post: post}" class="blog-card__title-link">
+                {post.title}
+            </f:link.action>
+        </h2>
+
+        <f:render partial="Post/Meta" arguments="{post: post}" />
+
+        <f:if condition="{post.teaser}">
+            <p class="blog-card__teaser">{post.teaser -> f:format.crop(maxCharacters: 150, append: '…')}</p>
+        </f:if>
+
+        <f:link.action action="show" arguments="{post: post}" class="blog-card__read-more">
+            Weiterlesen
+        </f:link.action>
+
+    </div>
+
+</article>
+
+</html>

@@ -1,0 +1,48 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Blog" />
+
+<f:section name="Main">
+    <div class="blog-list blog-list--category">
+
+        <header class="blog-list__header">
+            <h2 class="blog-list__category-title">Kategorie: {category.title}</h2>
+            <f:if condition="{category.description}">
+                <p class="blog-list__category-desc">{category.description}</p>
+            </f:if>
+            <f:link.action action="list" class="blog-list__back">&larr; Alle Beiträge</f:link.action>
+        </header>
+
+        <f:if condition="{categories}">
+            <nav class="blog-categories" aria-label="Kategorien">
+                <ul class="blog-categories__list">
+                    <f:for each="{categories}" as="cat">
+                        <li class="blog-categories__item">
+                            <f:link.action
+                                action="category"
+                                arguments="{category: cat}"
+                                class="blog-categories__link{f:if(condition: '{cat.uid} == {category.uid}', then: ' blog-categories__link--active')}"
+                            >{cat.title}</f:link.action>
+                        </li>
+                    </f:for>
+                </ul>
+            </nav>
+        </f:if>
+
+        <div class="blog-list__grid">
+            <f:for each="{paginator.paginatedItems}" as="post">
+                <f:render partial="Post/Card" arguments="{post: post}" />
+            </f:for>
+        </div>
+
+        <f:if condition="{pagination.lastPageNumber} > 1">
+            <f:render partial="Pagination" arguments="{pagination: pagination, paginator: paginator}" />
+        </f:if>
+
+    </div>
+</f:section>
+
+</html>

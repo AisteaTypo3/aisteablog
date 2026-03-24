@@ -1,0 +1,4 @@
+name: aistea/aisteablog
+label: 'Aistea Blog'
+dependencies:
+  - aistea/aisteacorp

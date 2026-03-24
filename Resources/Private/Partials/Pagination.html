@@ -1,0 +1,38 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<nav class="blog-pagination" aria-label="Seitennavigation">
+    <ul class="blog-pagination__list">
+
+        <f:if condition="{pagination.previousPageNumber}">
+            <li class="blog-pagination__item blog-pagination__item--prev">
+                <f:link.action arguments="{currentPage: pagination.previousPageNumber}" class="blog-pagination__link">
+                    &larr; Zurück
+                </f:link.action>
+            </li>
+        </f:if>
+
+        <f:for each="{pagination.allPageNumbers}" as="page">
+            <li class="blog-pagination__item{f:if(condition: '{page} == {paginator.currentPageNumber}', then: ' blog-pagination__item--active')}">
+                <f:link.action
+                    arguments="{currentPage: page}"
+                    class="blog-pagination__link{f:if(condition: '{page} == {paginator.currentPageNumber}', then: ' blog-pagination__link--active')}"
+                    aria-current="{f:if(condition: '{page} == {paginator.currentPageNumber}', then: 'page')}"
+                >{page}</f:link.action>
+            </li>
+        </f:for>
+
+        <f:if condition="{pagination.nextPageNumber}">
+            <li class="blog-pagination__item blog-pagination__item--next">
+                <f:link.action arguments="{currentPage: pagination.nextPageNumber}" class="blog-pagination__link">
+                    Weiter &rarr;
+                </f:link.action>
+            </li>
+        </f:if>
+
+    </ul>
+</nav>
+
+</html>

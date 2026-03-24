@@ -1,0 +1,27 @@
+# ====================================================
+# Blog Plugin: Extbase View-Konfiguration
+# ====================================================
+plugin.tx_aisteablog_blog {
+    view {
+        templateRootPaths {
+            0 = EXT:aisteablog/Resources/Private/Templates/
+        }
+        partialRootPaths {
+            0 = EXT:aisteablog/Resources/Private/Partials/
+        }
+        layoutRootPaths {
+            0 = EXT:aisteablog/Resources/Private/Layouts/
+        }
+    }
+    settings {
+        postsPerPage = 6
+    }
+}
+
+# ====================================================
+# Blog CSS einbinden
+# ====================================================
+page.includeCSS {
+    aisteablog = EXT:aisteablog/Resources/Public/Assets/SCSS/blog.scss
+    aisteablog.outputfile = EXT:aisteablog/Resources/Public/Css/blog.css
+}

@@ -1,0 +1,63 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Blog" />
+
+<f:section name="Main">
+    <article class="blog-post">
+
+        <f:if condition="{post.firstCoverImage}">
+            <div class="blog-post__cover">
+                <f:image image="{post.firstCoverImage}" class="blog-post__cover-img" alt="{post.title}" />
+            </div>
+        </f:if>
+
+        <header class="blog-post__header">
+            <h1 class="blog-post__title">{post.title}</h1>
+            <f:render partial="Post/Meta" arguments="{post: post}" />
+        </header>
+
+        <f:if condition="{post.teaser}">
+            <p class="blog-post__teaser">{post.teaser}</p>
+        </f:if>
+
+        <div class="blog-post__body">
+            <f:format.html>{post.bodytext}</f:format.html>
+        </div>
+
+        <footer class="blog-post__footer">
+            <f:if condition="{post.tags}">
+                <div class="blog-post__tags">
+                    <f:for each="{post.tags}" as="tag">
+                        <span class="blog-post__tag">{tag.title}</span>
+                    </f:for>
+                </div>
+            </f:if>
+
+            <f:link.action action="list" class="blog-post__back">
+                &larr; Alle Beiträge
+            </f:link.action>
+        </footer>
+
+    </article>
+
+    <f:if condition="{categories}">
+        <aside class="blog-sidebar">
+            <h3 class="blog-sidebar__title">Kategorien</h3>
+            <ul class="blog-sidebar__list">
+                <f:for each="{categories}" as="category">
+                    <li>
+                        <f:link.action action="category" arguments="{category: category}">
+                            {category.title}
+                        </f:link.action>
+                    </li>
+                </f:for>
+            </ul>
+        </aside>
+    </f:if>
+
+</f:section>
+
+</html>

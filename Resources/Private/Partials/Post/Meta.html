@@ -1,0 +1,19 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<div class="blog-meta">
+    <f:if condition="{post.publishDate}">
+        <time class="blog-meta__date" datetime="{post.publishDate -> f:format.date(format: 'Y-m-d')}">
+            <f:format.date format="d. F Y">{post.publishDate}</f:format.date>
+        </time>
+    </f:if>
+
+    <f:if condition="{post.author}">
+        <span class="blog-meta__separator" aria-hidden="true">&middot;</span>
+        <span class="blog-meta__author">{post.author}</span>
+    </f:if>
+</div>
+
+</html>
