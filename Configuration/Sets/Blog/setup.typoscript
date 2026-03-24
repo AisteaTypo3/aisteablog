@@ -19,6 +19,13 @@ plugin.tx_aisteablog_blog {
 }
 
 # ====================================================
+# Post-Detailseite: Header-ColPos (Hero) ausblenden
+# ====================================================
+[request.getQueryParams()['tx_aisteablog_blog']['action'] == 'show']
+page.10.paths.10 = EXT:aisteablog/Resources/Private/PageView/
+[END]
+
+# ====================================================
 # Blog CSS einbinden
 # ====================================================
 page.includeCSS {
