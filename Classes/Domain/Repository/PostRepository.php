@@ -6,12 +6,28 @@ namespace Aistea\Aisteablog\Domain\Repository;
 
 use Aistea\Aisteablog\Domain\Model\Category;
 use Aistea\Aisteablog\Domain\Model\Post;
+use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 class PostRepository extends Repository
 {
+    public function __construct(private readonly ConnectionPool $connectionPool)
+    {
+        parent::__construct();
+    }
+
+    public function incrementViewCount(Post $post): void
+    {
+        $this->connectionPool
+            ->getConnectionForTable('tx_aisteablog_domain_model_post')
+            ->executeStatement(
+                'UPDATE tx_aisteablog_domain_model_post SET view_count = view_count + 1 WHERE uid = :uid',
+                ['uid' => $post->getUid()]
+            );
+    }
+
     protected $defaultOrderings = [
         'publishDate' => QueryInterface::ORDER_DESCENDING,
     ];

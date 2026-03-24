@@ -9,6 +9,6 @@ ExtensionUtility::configurePlugin(
     'Aisteablog',
     'Blog',
     [PostController::class => 'list, show, category'],
-    [],
+    [PostController::class => 'show'],
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );

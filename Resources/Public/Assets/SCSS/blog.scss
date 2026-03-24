@@ -942,6 +942,19 @@ $font-stack:       -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helveti
     gap: 3px;
 }
 
+.blog-meta__views {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.blog-meta__views-icon {
+    width: 14px;
+    height: 14px;
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
 // ============================================================
 // Post Navigation (Prev / Next)
 // ============================================================

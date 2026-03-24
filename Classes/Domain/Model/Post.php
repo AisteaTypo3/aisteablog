@@ -17,6 +17,7 @@ class Post extends AbstractEntity
     protected string $bodytext = '';
     protected string $author = '';
     protected ?\DateTime $publishDate = null;
+    protected int $viewCount = 0;
 
     /**
      * @var ObjectStorage<FileReference>
@@ -101,6 +102,16 @@ class Post extends AbstractEntity
     public function setPublishDate(?\DateTime $publishDate): void
     {
         $this->publishDate = $publishDate;
+    }
+
+    public function getViewCount(): int
+    {
+        return $this->viewCount;
+    }
+
+    public function setViewCount(int $viewCount): void
+    {
+        $this->viewCount = $viewCount;
     }
 
     public function getCoverImage(): ObjectStorage

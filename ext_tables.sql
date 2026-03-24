@@ -7,7 +7,8 @@ CREATE TABLE tx_aisteablog_domain_model_post (
     author        varchar(255)  NOT NULL DEFAULT '',
     publish_date  int(11)       NOT NULL DEFAULT '0',
     categories    int(11) UNSIGNED NOT NULL DEFAULT '0',
-    tags          int(11) UNSIGNED NOT NULL DEFAULT '0'
+    tags          int(11) UNSIGNED NOT NULL DEFAULT '0',
+    view_count    int(11) UNSIGNED NOT NULL DEFAULT '0'
 );
 
 CREATE TABLE tx_aisteablog_domain_model_category (

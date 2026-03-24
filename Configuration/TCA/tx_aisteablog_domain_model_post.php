@@ -36,7 +36,9 @@ return [
                 --div--;Zugriff,
                     hidden, starttime, endtime,
                 --div--;Sprache,
-                    sys_language_uid, l18n_parent, l18n_diffsource
+                    sys_language_uid, l18n_parent, l18n_diffsource,
+                --div--;Statistiken,
+                    view_count
             ',
         ],
     ],
@@ -156,6 +158,14 @@ return [
                 'MM'            => 'tx_aisteablog_post_tag_mm',
                 'size'          => 5,
                 'maxitems'      => 99,
+            ],
+        ],
+        'view_count' => [
+            'label'  => 'Aufrufe',
+            'config' => [
+                'type'     => 'number',
+                'readOnly' => true,
+                'default'  => 0,
             ],
         ],
     ],

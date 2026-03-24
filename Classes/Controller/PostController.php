@@ -44,6 +44,7 @@ class PostController extends ActionController
             ->setCreateAbsoluteUri(true)
             ->uriFor('show', ['post' => $post]);
 
+        $this->postRepository->incrementViewCount($post);
         $this->setOpenGraphTags($post, $shareUrl);
 
         $this->view->assignMultiple([

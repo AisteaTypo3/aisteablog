@@ -25,6 +25,17 @@
         </span>
     </f:if>
 
+    <f:if condition="{showViews} && {post.viewCount}">
+        <span class="blog-meta__separator" aria-hidden="true">&middot;</span>
+        <span class="blog-meta__views">
+            <svg class="blog-meta__views-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path d="M10 4.5C5.5 4.5 1.7 7.4 0 10c1.7 2.6 5.5 5.5 10 5.5S18.3 12.6 20 10c-1.7-2.6-5.5-5.5-10-5.5zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7zm0-5.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+            </svg>
+            {post.viewCount}
+            <f:translate key="blog.viewCount" extensionName="Aisteablog" />
+        </span>
+    </f:if>
+
 </div>
 
 </html>

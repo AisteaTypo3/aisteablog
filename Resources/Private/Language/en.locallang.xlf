@@ -27,6 +27,12 @@
                 <target>Read more</target>
             </trans-unit>
 
+            <!-- View count -->
+            <trans-unit id="blog.viewCount" xml:space="preserve">
+                <source>Aufrufe</source>
+                <target>Views</target>
+            </trans-unit>
+
             <!-- Reading time -->
             <trans-unit id="blog.readingTime" xml:space="preserve">
                 <source>Min. Lesezeit</source>
