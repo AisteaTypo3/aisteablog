@@ -50,8 +50,6 @@ class PostController extends ActionController
             'post'       => $post,
             'shareUrl'   => $shareUrl,
             'categories' => $this->categoryRepository->findAll(),
-            'prevPost'   => $this->postRepository->findPreviousPost($post),
-            'nextPost'   => $this->postRepository->findNextPost($post),
         ]);
 
         return $this->htmlResponse();
