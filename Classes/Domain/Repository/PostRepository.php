@@ -20,12 +20,20 @@ class PostRepository extends Repository
 
     public function incrementViewCount(Post $post): void
     {
-        $this->connectionPool
-            ->getConnectionForTable('tx_aisteablog_domain_model_post')
-            ->executeStatement(
-                'UPDATE tx_aisteablog_domain_model_post SET view_count = view_count + 1 WHERE uid = :uid',
-                ['uid' => $post->getUid()]
-            );
+        $connection = $this->connectionPool->getConnectionForTable('tx_aisteablog_domain_model_post');
+
+        $record = $connection
+            ->select(['uid', 'l18n_parent'], 'tx_aisteablog_domain_model_post', ['uid' => $post->getUid()])
+            ->fetchAssociative();
+
+        $targetUid = ($record && (int)$record['l18n_parent'] > 0)
+            ? (int)$record['l18n_parent']
+            : $post->getUid();
+
+        $connection->executeStatement(
+            'UPDATE tx_aisteablog_domain_model_post SET view_count = view_count + 1 WHERE uid = :uid',
+            ['uid' => $targetUid]
+        );
     }
 
     protected $defaultOrderings = [

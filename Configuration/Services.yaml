@@ -6,3 +6,9 @@ services:
 
   Aistea\Aisteablog\:
     resource: '../Classes/*'
+
+  Aistea\Aisteablog\PageTitle\PostPageTitleProvider:
+    tags:
+      - name: 'pages.pageTitleProvider'
+        priority: 50
+        before: 'seo'

@@ -8,6 +8,7 @@ use Aistea\Aisteablog\Domain\Model\Category;
 use Aistea\Aisteablog\Domain\Model\Post;
 use Aistea\Aisteablog\Domain\Repository\CategoryRepository;
 use Aistea\Aisteablog\Domain\Repository\PostRepository;
+use Aistea\Aisteablog\PageTitle\PostPageTitleProvider;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\MetaTag\MetaTagManagerRegistry;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
@@ -20,6 +21,7 @@ class PostController extends ActionController
         private readonly PostRepository $postRepository,
         private readonly CategoryRepository $categoryRepository,
         private readonly MetaTagManagerRegistry $metaTagManagerRegistry,
+        private readonly PostPageTitleProvider $pageTitleProvider,
     ) {}
 
     public function listAction(int $currentPage = 1): ResponseInterface
@@ -45,6 +47,7 @@ class PostController extends ActionController
             ->uriFor('show', ['post' => $post]);
 
         $this->postRepository->incrementViewCount($post);
+        $this->pageTitleProvider->setTitle($post->getTitle());
         $this->setOpenGraphTags($post, $shareUrl);
 
         $this->view->assignMultiple([
