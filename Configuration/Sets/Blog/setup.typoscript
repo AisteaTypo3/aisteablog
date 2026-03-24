@@ -21,9 +21,21 @@ plugin.tx_aisteablog_blog {
 # ====================================================
 # Post-Detailseite: Header-ColPos (Hero) ausblenden
 # ====================================================
-[request.getQueryParams()['tx_aisteablog_blog']['action'] == 'show']
+[traverse(request.getQueryParams(), 'tx_aisteablog_blog/action') == 'show']
 page.10.paths.10 = EXT:aisteablog/Resources/Private/PageView/
 [END]
+
+# ====================================================
+# RTE: Leere <p>-Tags serverseitig entfernen
+# ====================================================
+lib.parseFunc_RTE {
+    nonTypoTagStdWrap.HTMLparser = 1
+    nonTypoTagStdWrap.HTMLparser {
+        stripEmptyTags = 1
+        stripEmptyTags.tags = p
+        stripEmptyTags.treatNonBreakingSpaceAsEmpty = 1
+    }
+}
 
 # ====================================================
 # Blog CSS einbinden
@@ -31,4 +43,8 @@ page.10.paths.10 = EXT:aisteablog/Resources/Private/PageView/
 page.includeCSS {
     aisteablog = EXT:aisteablog/Resources/Public/Assets/SCSS/blog.scss
     aisteablog.outputfile = EXT:aisteablog/Resources/Public/Css/blog.css
+}
+
+page.includeJSFooter {
+    aisteablog = EXT:aisteablog/Resources/Public/JavaScript/blog.js
 }
