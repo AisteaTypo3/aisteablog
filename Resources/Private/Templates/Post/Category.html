@@ -6,43 +6,32 @@
 <f:layout name="Blog" />
 
 <f:section name="Main">
-    <div class="blog-list blog-list--category">
+<div class="blog-section">
+    <div class="blog-list">
 
-        <header class="blog-list__header">
-            <h2 class="blog-list__category-title">Kategorie: {category.title}</h2>
+        <div class="blog-list__header" style="text-align:left;">
+            <span class="blog-list__category-badge">
+                <f:translate key="blog.category.prefix" extensionName="Aisteablog" />
+            </span>
+            <h1 class="blog-list__category-title">{category.title}</h1>
             <f:if condition="{category.description}">
                 <p class="blog-list__category-desc">{category.description}</p>
             </f:if>
-            <f:link.action action="list" class="blog-list__back">&larr; Alle Beiträge</f:link.action>
-        </header>
-
-        <f:if condition="{categories}">
-            <nav class="blog-categories" aria-label="Kategorien">
-                <ul class="blog-categories__list">
-                    <f:for each="{categories}" as="cat">
-                        <li class="blog-categories__item">
-                            <f:link.action
-                                action="category"
-                                arguments="{category: cat}"
-                                class="blog-categories__link{f:if(condition: '{cat.uid} == {category.uid}', then: ' blog-categories__link--active')}"
-                            >{cat.title}</f:link.action>
-                        </li>
-                    </f:for>
-                </ul>
-            </nav>
-        </f:if>
-
-        <div class="blog-list__grid">
-            <f:for each="{paginator.paginatedItems}" as="post">
-                <f:render partial="Post/Card" arguments="{post: post}" />
-            </f:for>
+            <f:link.action action="list" class="blog-list__back">
+                <f:translate key="blog.backToList" extensionName="Aisteablog" />
+            </f:link.action>
         </div>
+
+        <f:render partial="Post/CategoriesNav" arguments="{categories: categories, activeCategoryUid: category.uid}" />
+
+        <f:render partial="Post/Grid" arguments="{paginator: paginator, emptyKey: 'blog.category.empty'}" />
 
         <f:if condition="{pagination.lastPageNumber} > 1">
             <f:render partial="Pagination" arguments="{pagination: pagination, paginator: paginator}" />
         </f:if>
 
     </div>
+</div>
 </f:section>
 
 </html>

@@ -1,0 +1,17 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<div class="blog-list__grid">
+    <f:for each="{paginator.paginatedItems}" as="post">
+        <f:render partial="Post/Card" arguments="{post: post}" />
+    </f:for>
+    <f:if condition="{paginator.numberOfItems} == 0">
+        <p class="blog-list__empty">
+            <f:translate key="{emptyKey}" extensionName="Aisteablog" />
+        </p>
+    </f:if>
+</div>
+
+</html>

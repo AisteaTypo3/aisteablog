@@ -1,0 +1,27 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:if condition="{post.firstCoverImage}">
+    <f:then>
+        <div class="blog-post__hero">
+            <div class="blog-post__hero-image">
+                <f:image image="{post.firstCoverImage}" alt="{post.title}" />
+            </div>
+            <div class="blog-post__hero-gradient"></div>
+            <div class="blog-post__hero-content">
+                <f:render partial="Post/HeroMeta" arguments="{post: post}" />
+            </div>
+        </div>
+    </f:then>
+    <f:else>
+        <div class="blog-post__hero blog-post__hero--no-image">
+            <div class="blog-post__hero-content">
+                <f:render partial="Post/HeroMeta" arguments="{post: post}" />
+            </div>
+        </div>
+    </f:else>
+</f:if>
+
+</html>

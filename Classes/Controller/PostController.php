@@ -37,9 +37,17 @@ class PostController extends ActionController
 
     public function showAction(Post $post): ResponseInterface
     {
+        $shareUrl = $this->uriBuilder
+            ->reset()
+            ->setCreateAbsoluteUri(true)
+            ->uriFor('show', ['post' => $post]);
+
         $this->view->assignMultiple([
             'post'       => $post,
+            'shareUrl'   => $shareUrl,
             'categories' => $this->categoryRepository->findAll(),
+            'prevPost'   => $this->postRepository->findPreviousPost($post),
+            'nextPost'   => $this->postRepository->findNextPost($post),
         ]);
 
         return $this->htmlResponse();

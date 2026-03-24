@@ -1,9 +1,11 @@
 <html
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:blog="http://typo3.org/ns/Aistea/Aisteablog/ViewHelpers"
     data-namespace-typo3-fluid="true"
 >
 
 <div class="blog-meta">
+
     <f:if condition="{post.publishDate}">
         <time class="blog-meta__date" datetime="{post.publishDate -> f:format.date(format: 'Y-m-d')}">
             <f:format.date format="d. F Y">{post.publishDate}</f:format.date>
@@ -14,6 +16,15 @@
         <span class="blog-meta__separator" aria-hidden="true">&middot;</span>
         <span class="blog-meta__author">{post.author}</span>
     </f:if>
+
+    <f:if condition="{post.bodytext}">
+        <span class="blog-meta__separator" aria-hidden="true">&middot;</span>
+        <span class="blog-meta__reading-time">
+            <blog:readingTime text="{post.bodytext}" />
+            <f:translate key="blog.readingTime" extensionName="Aisteablog" />
+        </span>
+    </f:if>
+
 </div>
 
 </html>

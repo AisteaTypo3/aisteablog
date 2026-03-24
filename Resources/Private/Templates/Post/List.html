@@ -1,41 +1,33 @@
 <html
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-    xmlns:e="http://typo3.org/ns/TYPO3/CMS/Extbase/ViewHelpers"
     data-namespace-typo3-fluid="true"
 >
 
 <f:layout name="Blog" />
 
 <f:section name="Main">
+<div class="blog-section">
     <div class="blog-list">
 
-        <f:if condition="{categories}">
-            <nav class="blog-categories" aria-label="Kategorien">
-                <ul class="blog-categories__list">
-                    <f:for each="{categories}" as="category">
-                        <li class="blog-categories__item">
-                            <f:link.action
-                                action="category"
-                                arguments="{category: category}"
-                                class="blog-categories__link"
-                            >{category.title}</f:link.action>
-                        </li>
-                    </f:for>
-                </ul>
-            </nav>
-        </f:if>
-
-        <div class="blog-list__grid">
-            <f:for each="{paginator.paginatedItems}" as="post" iteration="i">
-                <f:render partial="Post/Card" arguments="{post: post}" />
-            </f:for>
+        <div class="blog-list__header">
+            <h1 class="blog-list__title">
+                <f:translate key="blog.title" extensionName="Aisteablog" />
+            </h1>
+            <p class="blog-list__subtitle">
+                <f:translate key="blog.subtitle" extensionName="Aisteablog" />
+            </p>
         </div>
+
+        <f:render partial="Post/CategoriesNav" arguments="{categories: categories, activeCategoryUid: 0}" />
+
+        <f:render partial="Post/Grid" arguments="{paginator: paginator, emptyKey: 'blog.empty'}" />
 
         <f:if condition="{pagination.lastPageNumber} > 1">
             <f:render partial="Pagination" arguments="{pagination: pagination, paginator: paginator}" />
         </f:if>
 
     </div>
+</div>
 </f:section>
 
 </html>

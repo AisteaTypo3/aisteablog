@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="de" target-language="en" datatype="plaintext" original="messages" product-name="aisteablog">
+        <header/>
+        <body>
+            <!-- Blog List -->
+            <trans-unit id="blog.title" xml:space="preserve">
+                <source>Blog</source>
+                <target>Blog</target>
+            </trans-unit>
+            <trans-unit id="blog.subtitle" xml:space="preserve">
+                <source>Gedanken zu TYPO3, Webentwicklung und Design.</source>
+                <target>Thoughts on TYPO3, web development and design.</target>
+            </trans-unit>
+            <trans-unit id="blog.empty" xml:space="preserve">
+                <source>Noch keine Beiträge vorhanden.</source>
+                <target>No posts yet.</target>
+            </trans-unit>
+            <trans-unit id="blog.filterByCategory" xml:space="preserve">
+                <source>Nach Kategorie filtern</source>
+                <target>Filter by category</target>
+            </trans-unit>
+
+            <!-- Blog Card -->
+            <trans-unit id="blog.readMore" xml:space="preserve">
+                <source>Weiterlesen</source>
+                <target>Read more</target>
+            </trans-unit>
+
+            <!-- Reading time -->
+            <trans-unit id="blog.readingTime" xml:space="preserve">
+                <source>Min. Lesezeit</source>
+                <target>min read</target>
+            </trans-unit>
+
+            <!-- Category view -->
+            <trans-unit id="blog.category.prefix" xml:space="preserve">
+                <source>Kategorie</source>
+                <target>Category</target>
+            </trans-unit>
+            <trans-unit id="blog.category.allCategories" xml:space="preserve">
+                <source>Alle Kategorien</source>
+                <target>All categories</target>
+            </trans-unit>
+            <trans-unit id="blog.category.empty" xml:space="preserve">
+                <source>Keine Beiträge in dieser Kategorie.</source>
+                <target>No posts in this category.</target>
+            </trans-unit>
+
+            <!-- Post detail -->
+            <trans-unit id="blog.backToList" xml:space="preserve">
+                <source>Alle Beiträge</source>
+                <target>All posts</target>
+            </trans-unit>
+            <trans-unit id="blog.furtherCategories" xml:space="preserve">
+                <source>Weitere Kategorien</source>
+                <target>More categories</target>
+            </trans-unit>
+
+            <!-- Post navigation -->
+            <trans-unit id="post.navigation.prev" xml:space="preserve">
+                <source>Vorheriger Beitrag</source>
+                <target>Previous post</target>
+            </trans-unit>
+            <trans-unit id="post.navigation.next" xml:space="preserve">
+                <source>Nächster Beitrag</source>
+                <target>Next post</target>
+            </trans-unit>
+
+            <!-- Share -->
+            <trans-unit id="blog.share.label" xml:space="preserve">
+                <source>Teilen</source>
+                <target>Share</target>
+            </trans-unit>
+            <trans-unit id="blog.share.linkedin" xml:space="preserve">
+                <source>LinkedIn</source>
+                <target>LinkedIn</target>
+            </trans-unit>
+            <trans-unit id="blog.share.twitter" xml:space="preserve">
+                <source>X / Twitter</source>
+                <target>X / Twitter</target>
+            </trans-unit>
+            <trans-unit id="blog.share.copy" xml:space="preserve">
+                <source>Link kopieren</source>
+                <target>Copy link</target>
+            </trans-unit>
+            <trans-unit id="blog.share.copied" xml:space="preserve">
+                <source>Kopiert!</source>
+                <target>Copied!</target>
+            </trans-unit>
+
+            <!-- Pagination -->
+            <trans-unit id="pagination.label" xml:space="preserve">
+                <source>Seitennavigation</source>
+                <target>Page navigation</target>
+            </trans-unit>
+            <trans-unit id="pagination.previous" xml:space="preserve">
+                <source>Vorherige Seite</source>
+                <target>Previous page</target>
+            </trans-unit>
+            <trans-unit id="pagination.next" xml:space="preserve">
+                <source>Nächste Seite</source>
+                <target>Next page</target>
+            </trans-unit>
+            <trans-unit id="pagination.page" xml:space="preserve">
+                <source>Seite</source>
+                <target>Page</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

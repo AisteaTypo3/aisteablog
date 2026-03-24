@@ -3,14 +3,19 @@
     data-namespace-typo3-fluid="true"
 >
 
-<article class="blog-card">
+<div class="blog-card">
 
     <f:if condition="{post.firstCoverImage}">
-        <div class="blog-card__image">
-            <f:link.action action="show" arguments="{post: post}" tabindex="-1" aria-hidden="true">
-                <f:image image="{post.firstCoverImage}" width="640c" height="360c" class="blog-card__img" alt="{post.title}" />
-            </f:link.action>
-        </div>
+        <f:then>
+            <div class="blog-card__image">
+                <f:link.action action="show" arguments="{post: post}" tabindex="-1" aria-hidden="true">
+                    <f:image image="{post.firstCoverImage}" width="640c" height="360c" class="blog-card__img" alt="{post.title}" />
+                </f:link.action>
+            </div>
+        </f:then>
+        <f:else>
+            <div class="blog-card__image blog-card__image--placeholder"></div>
+        </f:else>
     </f:if>
 
     <div class="blog-card__body">
@@ -34,15 +39,17 @@
         <f:render partial="Post/Meta" arguments="{post: post}" />
 
         <f:if condition="{post.teaser}">
-            <p class="blog-card__teaser">{post.teaser -> f:format.crop(maxCharacters: 150, append: '…')}</p>
+            <p class="blog-card__teaser">{post.teaser}</p>
         </f:if>
 
-        <f:link.action action="show" arguments="{post: post}" class="blog-card__read-more">
-            Weiterlesen
-        </f:link.action>
+        <div class="blog-card__footer">
+            <f:link.action action="show" arguments="{post: post}" class="blog-card__read-more">
+                <f:translate key="blog.readMore" extensionName="Aisteablog" />
+            </f:link.action>
+        </div>
 
     </div>
 
-</article>
+</div>
 
 </html>

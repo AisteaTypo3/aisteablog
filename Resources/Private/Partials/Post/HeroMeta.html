@@ -1,0 +1,22 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:if condition="{post.categories}">
+    <div class="blog-post__hero-categories">
+        <f:for each="{post.categories}" as="heroCategory">
+            <f:link.action action="category" arguments="{category: heroCategory}" class="blog-post__hero-category">
+                {heroCategory.title}
+            </f:link.action>
+        </f:for>
+    </div>
+</f:if>
+
+<h1 class="blog-post__hero-title">{post.title}</h1>
+
+<div class="blog-post__hero-meta">
+    <f:render partial="Post/Meta" arguments="{post: post}" />
+</div>
+
+</html>
