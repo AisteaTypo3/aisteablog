@@ -30,6 +30,23 @@ CREATE TABLE tx_aisteablog_post_category_mm (
     KEY uid_foreign (uid_foreign)
 );
 
+CREATE TABLE tx_aisteablog_domain_model_comment (
+    uid           int(11) NOT NULL auto_increment,
+    pid           int(11) NOT NULL DEFAULT '0',
+    tstamp        int(11) unsigned NOT NULL DEFAULT '0',
+    crdate        int(11) unsigned NOT NULL DEFAULT '0',
+    deleted       tinyint(4) unsigned NOT NULL DEFAULT '0',
+    hidden        tinyint(4) unsigned NOT NULL DEFAULT '0',
+    post          int(11) unsigned NOT NULL DEFAULT '0',
+    author_name   varchar(255) NOT NULL DEFAULT '',
+    author_email  varchar(255) NOT NULL DEFAULT '',
+    content       text,
+    approved      tinyint(1) unsigned NOT NULL DEFAULT '0',
+
+    PRIMARY KEY (uid),
+    KEY parent (pid)
+);
+
 CREATE TABLE tx_aisteablog_post_tag_mm (
     uid_local       int(11) UNSIGNED DEFAULT '0' NOT NULL,
     uid_foreign     int(11) UNSIGNED DEFAULT '0' NOT NULL,

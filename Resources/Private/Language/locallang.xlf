@@ -76,6 +76,29 @@
                 <source>Kopiert!</source>
             </trans-unit>
 
+            <!-- Comments -->
+            <trans-unit id="comment.list.title" xml:space="preserve">
+                <source>Kommentare</source>
+            </trans-unit>
+            <trans-unit id="comment.form.title" xml:space="preserve">
+                <source>Kommentar hinterlassen</source>
+            </trans-unit>
+            <trans-unit id="comment.form.name" xml:space="preserve">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="comment.form.email" xml:space="preserve">
+                <source>E-Mail (wird nicht veröffentlicht)</source>
+            </trans-unit>
+            <trans-unit id="comment.form.content" xml:space="preserve">
+                <source>Kommentar</source>
+            </trans-unit>
+            <trans-unit id="comment.form.consent" xml:space="preserve">
+                <source>Ich stimme zu, dass Name und Kommentar gespeichert und angezeigt werden.</source>
+            </trans-unit>
+            <trans-unit id="comment.form.submit" xml:space="preserve">
+                <source>Kommentar absenden</source>
+            </trans-unit>
+
             <!-- Pagination -->
             <trans-unit id="pagination.label" xml:space="preserve">
                 <source>Seitennavigation</source>

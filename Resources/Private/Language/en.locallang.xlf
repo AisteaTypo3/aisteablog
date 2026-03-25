@@ -95,6 +95,36 @@
                 <target>Copied!</target>
             </trans-unit>
 
+            <!-- Comments -->
+            <trans-unit id="comment.list.title" xml:space="preserve">
+                <source>Kommentare</source>
+                <target>Comments</target>
+            </trans-unit>
+            <trans-unit id="comment.form.title" xml:space="preserve">
+                <source>Kommentar hinterlassen</source>
+                <target>Leave a comment</target>
+            </trans-unit>
+            <trans-unit id="comment.form.name" xml:space="preserve">
+                <source>Name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="comment.form.email" xml:space="preserve">
+                <source>E-Mail (wird nicht veröffentlicht)</source>
+                <target>Email (will not be published)</target>
+            </trans-unit>
+            <trans-unit id="comment.form.content" xml:space="preserve">
+                <source>Kommentar</source>
+                <target>Comment</target>
+            </trans-unit>
+            <trans-unit id="comment.form.consent" xml:space="preserve">
+                <source>Ich stimme zu, dass Name und Kommentar gespeichert und angezeigt werden.</source>
+                <target>I agree that my name and comment will be stored and displayed.</target>
+            </trans-unit>
+            <trans-unit id="comment.form.submit" xml:space="preserve">
+                <source>Kommentar absenden</source>
+                <target>Submit comment</target>
+            </trans-unit>
+
             <!-- Pagination -->
             <trans-unit id="pagination.label" xml:space="preserve">
                 <source>Seitennavigation</source>

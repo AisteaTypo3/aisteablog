@@ -23,6 +23,8 @@
 
             <f:render partial="Post/Share" arguments="{post: post, shareUrl: shareUrl}" />
 
+            <f:render partial="Post/Comments" arguments="{post: post, comments: comments, newComment: newComment}" />
+
             <div class="blog-post__footer">
                 <f:if condition="{post.tags}">
                     <div class="blog-post__tags">

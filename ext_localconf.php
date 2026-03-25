@@ -8,7 +8,7 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 ExtensionUtility::configurePlugin(
     'Aisteablog',
     'Blog',
-    [PostController::class => 'list, show, category'],
-    [PostController::class => 'show'],
+    [PostController::class => 'list, show, category, createComment'],
+    [PostController::class => 'show, createComment'],
     ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );

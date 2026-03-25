@@ -1,0 +1,103 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true"
+>
+
+<div class="blog-comments">
+
+    <div class="blog-comments__flash"><f:flashMessages /></div>
+
+    <f:if condition="{comments}">
+        <div class="blog-comments__list">
+            <h2 class="blog-comments__title">
+                <f:translate key="comment.list.title" extensionName="Aisteablog" />
+            </h2>
+            <f:for each="{comments}" as="comment">
+                <div class="blog-comment">
+                    <div class="blog-comment__avatar">{comment.authorName -> f:format.crop(maxCharacters: 1, append: '')}</div>
+                    <div class="blog-comment__inner">
+                        <div class="blog-comment__meta">
+                            <span class="blog-comment__author">{comment.authorName}</span>
+                            <span class="blog-comment__date">
+                                <f:format.date format="d. M Y" date="{comment.crdate}" />
+                            </span>
+                        </div>
+                        <div class="blog-comment__body">{comment.content -> f:format.nl2br()}</div>
+                    </div>
+                </div>
+            </f:for>
+        </div>
+    </f:if>
+
+    <div class="blog-comments__form-wrap">
+        <h2 class="blog-comments__form-title">
+            <f:translate key="comment.form.title" extensionName="Aisteablog" />
+        </h2>
+
+        <f:form action="createComment" controller="Post"
+                objectName="newComment" object="{newComment}"
+                additionalAttributes="{novalidate: 'novalidate'}"
+                class="blog-comment-form">
+
+            <f:form.hidden name="post" value="{post.uid}" />
+
+            <div class="blog-comment-form__honeypot" aria-hidden="true">
+                <f:form.textfield name="website" value="" autocomplete="off" tabindex="-1" />
+            </div>
+
+            <div class="blog-comment-form__row">
+                <div class="blog-comment-form__field">
+                    <label class="blog-comment-form__label" for="comment-name">
+                        <f:translate key="comment.form.name" extensionName="Aisteablog" />
+                        <span class="blog-comment-form__required">*</span>
+                    </label>
+                    <f:form.textfield id="comment-name"
+                        property="authorName"
+                        class="blog-comment-form__input"
+                        autocomplete="name"
+                        required="required" />
+                </div>
+                <div class="blog-comment-form__field">
+                    <label class="blog-comment-form__label" for="comment-email">
+                        <f:translate key="comment.form.email" extensionName="Aisteablog" />
+                        <span class="blog-comment-form__required">*</span>
+                    </label>
+                    <f:form.textfield id="comment-email"
+                        property="authorEmail"
+                        type="email"
+                        class="blog-comment-form__input"
+                        autocomplete="email"
+                        required="required" />
+                </div>
+            </div>
+
+            <div class="blog-comment-form__field">
+                <label class="blog-comment-form__label" for="comment-content">
+                    <f:translate key="comment.form.content" extensionName="Aisteablog" />
+                    <span class="blog-comment-form__required">*</span>
+                </label>
+                <f:form.textarea id="comment-content"
+                    property="content"
+                    class="blog-comment-form__textarea"
+                    rows="5"
+                    required="required" />
+            </div>
+
+            <div class="blog-comment-form__consent">
+                <input type="checkbox" id="comment-consent" name="consent" value="1" required="required"
+                    class="blog-comment-form__checkbox" />
+                <label for="comment-consent" class="blog-comment-form__consent-label">
+                    <f:translate key="comment.form.consent" extensionName="Aisteablog" />
+                    <span class="blog-comment-form__required">*</span>
+                </label>
+            </div>
+
+            <f:form.submit value="{f:translate(key: 'comment.form.submit', extensionName: 'Aisteablog')}"
+                class="blog-comment-form__submit" />
+
+        </f:form>
+    </div>
+
+</div>
+
+</html>
