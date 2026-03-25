@@ -38,6 +38,36 @@ lib.parseFunc_RTE {
 }
 
 # ====================================================
+# XML-Sitemap: Blog Posts indexieren
+# ====================================================
+plugin.tx_seo.config {
+    xmlSitemap {
+        sitemaps {
+            aisteablog {
+                provider = TYPO3\CMS\Seo\XmlSitemap\RecordsSitemapDataProvider
+                config {
+                    table = tx_aisteablog_domain_model_post
+                    sortField = publish_date
+                    lastModifiedField = tstamp
+                    additionalWhere = AND hidden = 0 AND deleted = 0 AND sys_language_uid = 0
+                    url {
+                        pageId = 9001
+                        fieldToParameterMap {
+                            uid = tx_aisteablog_blog[post]
+                        }
+                        additionalGetParameters {
+                            tx_aisteablog_blog[action] = show
+                            tx_aisteablog_blog[controller] = Post
+                        }
+                        useCacheHash = 0
+                    }
+                }
+            }
+        }
+    }
+}
+
+# ====================================================
 # Blog CSS einbinden
 # ====================================================
 page.includeCSS {
