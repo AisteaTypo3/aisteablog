@@ -63,6 +63,12 @@ $font-stack:       -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helveti
     margin-bottom: 56px;
     display: flex;
     justify-content: center;
+
+    @media (max-width: 700px) {
+        margin-left: -24px;
+        margin-right: -24px;
+        justify-content: flex-start;
+    }
 }
 
 .blog-categories__list {
@@ -73,6 +79,24 @@ $font-stack:       -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helveti
     padding: 0;
     margin: 0;
     justify-content: center;
+
+    @media (max-width: 700px) {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 4px 24px 12px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        &::-webkit-scrollbar { display: none; }
+    }
+}
+
+@media (max-width: 700px) {
+    .blog-categories__list li {
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
 }
 
 .blog-categories__link {
