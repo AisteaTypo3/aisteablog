@@ -8,16 +8,6 @@
 <f:section name="Main">
 <div class="blog-section">
     <div class="blog-list">
-
-        <div class="blog-list__header">
-            <h1 class="blog-list__title">
-                <f:translate key="blog.title" extensionName="Aisteablog" />
-            </h1>
-            <p class="blog-list__subtitle">
-                <f:translate key="blog.subtitle" extensionName="Aisteablog" />
-            </p>
-        </div>
-
         <f:render partial="Post/CategoriesNav" arguments="{categories: categories, activeCategoryUid: 0}" />
 
         <f:render partial="Post/Grid" arguments="{paginator: paginator, emptyKey: 'blog.empty'}" />
