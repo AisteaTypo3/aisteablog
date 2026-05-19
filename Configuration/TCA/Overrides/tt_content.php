@@ -8,6 +8,6 @@ ExtensionUtility::registerPlugin(
     'Aisteablog',
     'Blog',
     'Aistea Blog',
-    'EXT:aisteablog/Resources/Public/Icons/plugin.svg',
+    'aisteablog-plugin',
     'plugins'
 );

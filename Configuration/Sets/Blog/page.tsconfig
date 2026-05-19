@@ -1,16 +1,22 @@
 # Blog-Datensätze im Backend-Wizard gruppieren
 TCEFORM.tt_content.CType.removeItems =
 
+# Auto-Wizard-Eintrag aus "Plugins" entfernen, da er unten kuratiert in "Blog" erscheint
+mod.wizards.newContentElement.wizardItems.plugins {
+    show := removeFromList(aisteablog_blog)
+}
+
 # Neues Inhaltelement-Gruppe "Blog" im Wizard anzeigen
 mod.wizards.newContentElement.wizardItems.blog {
     header = Blog
     elements {
         aisteablog_blog {
-            iconIdentifier = content-plugin
+            iconIdentifier = aisteablog-plugin
             title = Aistea Blog
             description = Zeigt Blog-Beiträge an (Liste, Detail, Kategorie)
             tt_content_defValues {
-                CType = aisteablog_blog
+                CType = list
+                list_type = aisteablog_blog
             }
         }
     }
