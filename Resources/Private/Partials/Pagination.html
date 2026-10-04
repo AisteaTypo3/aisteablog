@@ -8,36 +8,41 @@
 
         <f:if condition="{pagination.previousPageNumber}">
             <li class="blog-pagination__item blog-pagination__item--prev">
-                <f:link.action
-                    arguments="{currentPage: pagination.previousPageNumber}"
-                    class="blog-pagination__link"
-                    aria-label="{f:translate(key: 'pagination.previous', extensionName: 'Aisteablog')}"
-                >&#8592;</f:link.action>
+                <f:render section="Link" arguments="{page: pagination.previousPageNumber, category: category, label: '&#8592;', class: 'blog-pagination__link', ariaLabel: '{f:translate(key: \'pagination.previous\', extensionName: \'Aisteablog\')}'}" />
             </li>
         </f:if>
 
         <f:for each="{pagination.allPageNumbers}" as="page">
             <li class="blog-pagination__item">
-                <f:link.action
-                    arguments="{currentPage: page}"
-                    class="blog-pagination__link{f:if(condition: '{page} == {paginator.currentPageNumber}', then: ' blog-pagination__link--active')}"
-                    aria-current="{f:if(condition: '{page} == {paginator.currentPageNumber}', then: 'page')}"
-                    aria-label="{f:translate(key: 'pagination.page', extensionName: 'Aisteablog')} {page}"
-                >{page}</f:link.action>
+                <f:render section="Link" arguments="{page: page, category: category, label: page, current: '{f:if(condition: \'{page} == {paginator.currentPageNumber}\', then: \'page\')}', class: 'blog-pagination__link{f:if(condition: \'{page} == {paginator.currentPageNumber}\', then: \' blog-pagination__link--active\')}', ariaLabel: '{f:translate(key: \'pagination.page\', extensionName: \'Aisteablog\')} {page}'}" />
             </li>
         </f:for>
 
         <f:if condition="{pagination.nextPageNumber}">
             <li class="blog-pagination__item blog-pagination__item--next">
-                <f:link.action
-                    arguments="{currentPage: pagination.nextPageNumber}"
-                    class="blog-pagination__link"
-                    aria-label="{f:translate(key: 'pagination.next', extensionName: 'Aisteablog')}"
-                >&#8594;</f:link.action>
+                <f:render section="Link" arguments="{page: pagination.nextPageNumber, category: category, label: '&#8594;', class: 'blog-pagination__link', ariaLabel: '{f:translate(key: \'pagination.next\', extensionName: \'Aisteablog\')}'}" />
             </li>
         </f:if>
 
     </ul>
 </div>
+
+<f:comment>Page 1 links to the base URL (no /seite/1), so it is not a duplicate of the list page.</f:comment>
+<f:section name="Link"><f:spaceless>
+    <f:if condition="{category}">
+        <f:then>
+            <f:if condition="{page} == 1">
+                <f:then><f:link.action action="category" arguments="{category: category}" class="{class}" additionalAttributes="{aria-label: ariaLabel, aria-current: current}">{label -> f:format.raw()}</f:link.action></f:then>
+                <f:else><f:link.action action="category" arguments="{category: category, currentPage: page}" class="{class}" additionalAttributes="{aria-label: ariaLabel, aria-current: current}">{label -> f:format.raw()}</f:link.action></f:else>
+            </f:if>
+        </f:then>
+        <f:else>
+            <f:if condition="{page} == 1">
+                <f:then><f:link.action action="list" class="{class}" additionalAttributes="{aria-label: ariaLabel, aria-current: current}">{label -> f:format.raw()}</f:link.action></f:then>
+                <f:else><f:link.action action="list" arguments="{currentPage: page}" class="{class}" additionalAttributes="{aria-label: ariaLabel, aria-current: current}">{label -> f:format.raw()}</f:link.action></f:else>
+            </f:if>
+        </f:else>
+    </f:if>
+</f:spaceless></f:section>
 
 </html>

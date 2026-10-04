@@ -22,6 +22,17 @@ plugin.tx_aisteablog_blog {
 }
 
 # ====================================================
+# Seitentitel für Beitrags-, Kategorie- und Folgeseiten.
+# TYPO3 v14 liest Title-Provider nur aus TypoScript.
+# ====================================================
+config.pageTitleProviders {
+    aisteablog {
+        provider = Aistea\Aisteablog\PageTitle\PostPageTitleProvider
+        before = record, seo
+    }
+}
+
+# ====================================================
 # Post-Detailseite: Header-ColPos (Hero) ausblenden
 # ====================================================
 [traverse(request.getQueryParams(), 'tx_aisteablog_blog/action') == 'show']

@@ -27,7 +27,7 @@
         <f:render partial="Post/Grid" arguments="{paginator: paginator, emptyKey: 'blog.category.empty'}" />
 
         <f:if condition="{pagination.lastPageNumber} > 1">
-            <f:render partial="Pagination" arguments="{pagination: pagination, paginator: paginator}" />
+            <f:render partial="Pagination" arguments="{pagination: pagination, paginator: paginator, category: category}" />
         </f:if>
 
     </div>

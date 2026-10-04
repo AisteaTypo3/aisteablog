@@ -112,6 +112,17 @@
             <trans-unit id="pagination.page" xml:space="preserve">
                 <source>Seite</source>
             </trans-unit>
+
+            <!-- Meta tags -->
+            <trans-unit id="meta.category.title" xml:space="preserve">
+                <source>%s – Blog</source>
+            </trans-unit>
+            <trans-unit id="meta.category.description" xml:space="preserve">
+                <source>Alle Blogbeiträge zum Thema %s: Praxiswissen, Anleitungen und Erfahrungen aus der Webentwicklung.</source>
+            </trans-unit>
+            <trans-unit id="meta.pageNumber" xml:space="preserve">
+                <source>Seite %d</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

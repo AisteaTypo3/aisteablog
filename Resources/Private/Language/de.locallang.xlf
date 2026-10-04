@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="de" target-language="en" datatype="plaintext" original="messages" product-name="aisteablog">
+    <file source-language="de" target-language="de" datatype="plaintext" original="messages" product-name="aisteablog">
         <header/>
         <body>
             <!-- Blog List -->
@@ -10,73 +10,73 @@
             </trans-unit>
             <trans-unit id="blog.subtitle" xml:space="preserve">
                 <source>Gedanken zu TYPO3, Webentwicklung und Design.</source>
-                <target>Thoughts on TYPO3, web development and design.</target>
+                <target>Gedanken zu TYPO3, Webentwicklung und Design.</target>
             </trans-unit>
             <trans-unit id="blog.empty" xml:space="preserve">
                 <source>Noch keine Beiträge vorhanden.</source>
-                <target>No posts yet.</target>
+                <target>Noch keine Beiträge vorhanden.</target>
             </trans-unit>
             <trans-unit id="blog.filterByCategory" xml:space="preserve">
                 <source>Nach Kategorie filtern</source>
-                <target>Filter by category</target>
+                <target>Nach Kategorie filtern</target>
             </trans-unit>
 
             <!-- Blog Card -->
             <trans-unit id="blog.readMore" xml:space="preserve">
                 <source>Weiterlesen</source>
-                <target>Read more</target>
+                <target>Weiterlesen</target>
             </trans-unit>
 
             <!-- View count -->
             <trans-unit id="blog.viewCount" xml:space="preserve">
                 <source>Aufrufe</source>
-                <target>Views</target>
+                <target>Aufrufe</target>
             </trans-unit>
 
             <!-- Reading time -->
             <trans-unit id="blog.readingTime" xml:space="preserve">
                 <source>Min. Lesezeit</source>
-                <target>min read</target>
+                <target>Min. Lesezeit</target>
             </trans-unit>
 
             <!-- Category view -->
             <trans-unit id="blog.category.prefix" xml:space="preserve">
                 <source>Kategorie</source>
-                <target>Category</target>
+                <target>Kategorie</target>
             </trans-unit>
             <trans-unit id="blog.category.allCategories" xml:space="preserve">
                 <source>Alle Kategorien</source>
-                <target>All categories</target>
+                <target>Alle Kategorien</target>
             </trans-unit>
             <trans-unit id="blog.category.empty" xml:space="preserve">
                 <source>Keine Beiträge in dieser Kategorie.</source>
-                <target>No posts in this category.</target>
+                <target>Keine Beiträge in dieser Kategorie.</target>
             </trans-unit>
 
             <!-- Post detail -->
             <trans-unit id="blog.backToList" xml:space="preserve">
                 <source>Alle Beiträge</source>
-                <target>All posts</target>
+                <target>Alle Beiträge</target>
             </trans-unit>
             <trans-unit id="blog.furtherCategories" xml:space="preserve">
                 <source>Weitere Kategorien</source>
-                <target>More categories</target>
+                <target>Weitere Kategorien</target>
             </trans-unit>
 
             <!-- Post navigation -->
             <trans-unit id="post.navigation.prev" xml:space="preserve">
                 <source>Vorheriger Beitrag</source>
-                <target>Previous post</target>
+                <target>Vorheriger Beitrag</target>
             </trans-unit>
             <trans-unit id="post.navigation.next" xml:space="preserve">
                 <source>Nächster Beitrag</source>
-                <target>Next post</target>
+                <target>Nächster Beitrag</target>
             </trans-unit>
 
             <!-- Share -->
             <trans-unit id="blog.share.label" xml:space="preserve">
                 <source>Teilen</source>
-                <target>Share</target>
+                <target>Teilen</target>
             </trans-unit>
             <trans-unit id="blog.share.linkedin" xml:space="preserve">
                 <source>LinkedIn</source>
@@ -88,21 +88,21 @@
             </trans-unit>
             <trans-unit id="blog.share.copy" xml:space="preserve">
                 <source>Link kopieren</source>
-                <target>Copy link</target>
+                <target>Link kopieren</target>
             </trans-unit>
             <trans-unit id="blog.share.copied" xml:space="preserve">
                 <source>Kopiert!</source>
-                <target>Copied!</target>
+                <target>Kopiert!</target>
             </trans-unit>
 
             <!-- Comments -->
             <trans-unit id="comment.list.title" xml:space="preserve">
                 <source>Kommentare</source>
-                <target>Comments</target>
+                <target>Kommentare</target>
             </trans-unit>
             <trans-unit id="comment.form.title" xml:space="preserve">
                 <source>Kommentar hinterlassen</source>
-                <target>Leave a comment</target>
+                <target>Kommentar hinterlassen</target>
             </trans-unit>
             <trans-unit id="comment.form.name" xml:space="preserve">
                 <source>Name</source>
@@ -110,37 +110,37 @@
             </trans-unit>
             <trans-unit id="comment.form.email" xml:space="preserve">
                 <source>E-Mail (wird nicht veröffentlicht)</source>
-                <target>Email (will not be published)</target>
+                <target>E-Mail (wird nicht veröffentlicht)</target>
             </trans-unit>
             <trans-unit id="comment.form.content" xml:space="preserve">
                 <source>Kommentar</source>
-                <target>Comment</target>
+                <target>Kommentar</target>
             </trans-unit>
             <trans-unit id="comment.form.consent" xml:space="preserve">
                 <source>Ich stimme zu, dass Name und Kommentar gespeichert und angezeigt werden.</source>
-                <target>I agree that my name and comment will be stored and displayed.</target>
+                <target>Ich stimme zu, dass Name und Kommentar gespeichert und angezeigt werden.</target>
             </trans-unit>
             <trans-unit id="comment.form.submit" xml:space="preserve">
                 <source>Kommentar absenden</source>
-                <target>Submit comment</target>
+                <target>Kommentar absenden</target>
             </trans-unit>
 
             <!-- Pagination -->
             <trans-unit id="pagination.label" xml:space="preserve">
                 <source>Seitennavigation</source>
-                <target>Page navigation</target>
+                <target>Seitennavigation</target>
             </trans-unit>
             <trans-unit id="pagination.previous" xml:space="preserve">
                 <source>Vorherige Seite</source>
-                <target>Previous page</target>
+                <target>Vorherige Seite</target>
             </trans-unit>
             <trans-unit id="pagination.next" xml:space="preserve">
                 <source>Nächste Seite</source>
-                <target>Next page</target>
+                <target>Nächste Seite</target>
             </trans-unit>
             <trans-unit id="pagination.page" xml:space="preserve">
                 <source>Seite</source>
-                <target>Page</target>
+                <target>Seite</target>
             </trans-unit>
 
             <!-- Meta tags -->
@@ -150,11 +150,11 @@
             </trans-unit>
             <trans-unit id="meta.category.description" xml:space="preserve">
                 <source>Alle Blogbeiträge zum Thema %s: Praxiswissen, Anleitungen und Erfahrungen aus der Webentwicklung.</source>
-                <target>All blog posts about %s: practical knowledge, tutorials and experience from web development.</target>
+                <target>Alle Blogbeiträge zum Thema %s: Praxiswissen, Anleitungen und Erfahrungen aus der Webentwicklung.</target>
             </trans-unit>
             <trans-unit id="meta.pageNumber" xml:space="preserve">
                 <source>Seite %d</source>
-                <target>Page %d</target>
+                <target>Seite %d</target>
             </trans-unit>
         </body>
     </file>
